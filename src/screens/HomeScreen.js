@@ -247,10 +247,21 @@ function HomeScreen({ navigation }) {
 
                 <View style={styles.glavMenu}>
                 <ScrollView 
-                contentOffset={{x: 70, y: 0}}
+                contentOffset={{x: 0, y: 0}}
                 horizontal={true}
                 style={styles.scrollViewMenu}
                 >
+                <Pressable 
+                >
+                    <Text 
+                    style={[
+                        GlobalStyle.CustomFontRegular,
+                        styles.textMenuItemActiv,
+                    ]}
+                    >
+                        Подборки
+                    </Text>
+                </Pressable>
                 <Pressable 
                 onPress={() => onMenuIventsHandler()}
                 >
@@ -263,17 +274,7 @@ function HomeScreen({ navigation }) {
                         Все мероприятия
                     </Text>
                 </Pressable>
-                <Pressable 
-                >
-                    <Text 
-                    style={[
-                        GlobalStyle.CustomFontRegular,
-                        styles.textMenuItemActiv,
-                    ]}
-                    >
-                        Мероприятия
-                    </Text>
-                </Pressable>
+                
                 <Pressable 
                 onPress={() => onMenuSaveHandler()}
                 >

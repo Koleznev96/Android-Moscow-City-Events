@@ -275,6 +275,19 @@ function MyIventsScreen({ navigation }) {
                 style={styles.scrollViewMenu}
                 >
                 <Pressable 
+                onPress={() => onMenuHomeHandler()}
+                >
+                    <Text 
+                    style={[
+                        GlobalStyle.CustomFontRegular,
+                        styles.textMenuItem,
+                    ]}
+                    >
+                        Подборки
+                    </Text>
+                </Pressable>
+
+                <Pressable 
                 onPress={() => onMenuIventsHandler()}
                 >
                     <Text 
@@ -286,18 +299,7 @@ function MyIventsScreen({ navigation }) {
                         Все мероприятия
                     </Text>
                 </Pressable>
-                <Pressable 
-                onPress={() => onMenuHomeHandler()}
-                >
-                    <Text 
-                    style={[
-                        GlobalStyle.CustomFontRegular,
-                        styles.textMenuItem,
-                    ]}
-                    >
-                        Мероприятия
-                    </Text>
-                </Pressable>
+                
                 <Pressable 
                 
                 >

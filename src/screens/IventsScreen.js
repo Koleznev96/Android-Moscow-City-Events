@@ -224,10 +224,22 @@ function MyIventsScreen({ navigation }) {
 
                 <View style={styles.glavMenu}>
                 <ScrollView 
-                contentOffset={{x: 0, y: 0}}
+                contentOffset={{x: 70, y: 0}}
                 horizontal={true}
                 style={styles.scrollViewMenu}
                 >
+                    <Pressable 
+                onPress={() => onMenuHomeHandler()}
+                >
+                    <Text 
+                    style={[
+                        GlobalStyle.CustomFontRegular,
+                        styles.textMenuItem,
+                    ]}
+                    >
+                        Подборки
+                    </Text>
+                </Pressable>
                 <Pressable 
                 >
                     <Text 
@@ -239,18 +251,7 @@ function MyIventsScreen({ navigation }) {
                         Все мероприятия
                     </Text>
                 </Pressable>
-                <Pressable 
-                onPress={() => onMenuHomeHandler()}
-                >
-                    <Text 
-                    style={[
-                        GlobalStyle.CustomFontRegular,
-                        styles.textMenuItem,
-                    ]}
-                    >
-                        Мероприятия
-                    </Text>
-                </Pressable>
+                
                 <Pressable 
                 onPress={() => onMenuSaveHandler()}
                 >

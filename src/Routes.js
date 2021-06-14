@@ -19,9 +19,9 @@ const Stack = createStackNavigator();
 export const Routes = isAuthenticated => {
   const auth = useContext(AuthContext);
   const [statusSeting, setStatusSeting] = useState(false);
-  useEffect(() => {
-    auth.login(3);
-  }, [auth.login]);
+  // useEffect(() => {
+  //   auth.login(3);
+  // }, [auth.login]);
 
   const config = {
     screens: {
@@ -43,10 +43,11 @@ export const Routes = isAuthenticated => {
 
   return ( 
     <NavigationContainer linking={linking}>
-
+      {/* {isAuthenticated ? ( */}
       <Stack.Navigator>
-        <Stack.Screen name ='Ivents' component={IventsScreen} options={{headerShown: false}}/>
+        <Stack.Screen name='Login' component={AuthorizationScreen} options={{headerShown: false}}/>
         <Stack.Screen name ='Home' component={HomeScreen} options={{headerShown: false}}/>
+        <Stack.Screen name ='Ivents' component={IventsScreen} options={{headerShown: false}}/>
         <Stack.Screen name ='MyIvents' component={MyIventsScreen} options={{headerShown: false}}/>
         <Stack.Screen name ='event' component={IventScreen} 
         options={{
@@ -65,7 +66,11 @@ export const Routes = isAuthenticated => {
         }}
         />
       </Stack.Navigator>
-      
+      {/* ) : (
+        <Stack.Navigator initialRouteName='Login'>
+          <Stack.Screen name='Login' component={AuthorizationScreen} />
+        </Stack.Navigator>
+      )} */}
     </NavigationContainer>
   );
 }
